@@ -899,6 +899,429 @@
                 </div>
             </div>
 
+
+    <!-- Weekly Schedule / Lecture Plan Section -->
+    <section id="schedule" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold mb-3"><i class="fas fa-calendar-week me-2 text-primary"></i>Weekly Lecture Plan (12 Weeks)</h2>
+                <p class="lead">Structured progression from fundamentals to integration & evaluation</p>
+            </div>
+
+            <div class="accordion" id="weeklySchedule">
+                <!-- Week 1 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="week1Head">
+                        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#week1" type="button">
+                            Week 1: Foundations — Digital vs. Analog, Signals, Logic Levels
+                        </button>
+                    </h4>
+                    <div id="week1" class="accordion-collapse collapse show" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2"><i class="fas fa-chalkboard-teacher me-2"></i>Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Digital vs. analog quantities, voltage levels, noise margins; waveforms; clock & timing diagrams. [2]</li>
+                                <li>Number systems overview; positional notation; intro to binary & hex. [1][2]</li>
+                                <li>Course logistics, expectations; Bloom-aligned lab objectives. [5][3]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2"><i class="fas fa-users me-2"></i>In-class Activities</h6>
+                            <ul class="mb-3">
+                                <li>Timing diagram interpretation; map analog waveforms to logic levels. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2"><i class="fas fa-laptop-code me-2"></i>Lab 1 (Verilog Warm-up)</h6>
+                            <ul class="mb-3">
+                                <li>Toolchain orientation, module / testbench structure.</li>
+                                <li>Implement 2-input AND and 3-input OR; self-checking testbenches. [8][6]</li>
+                                <li>Deliverable: source + simulation transcript.</li>
+                            </ul>
+                            <p class="mb-1"><strong>Outcomes Focus:</strong> Remember / Understand. [4][5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 2 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="week2Head">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week2" type="button">
+                            Week 2: Number Systems & Codes; Signed / Unsigned Arithmetic
+                        </button>
+                    </h4>
+                    <div id="week2" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Decimal, binary, octal, hex conversions; fixed-width overflow; signed magnitude, 1’s & 2’s complement; arithmetic examples. [9][2]</li>
+                                <li>BCD representation; parity bit generation / checking. [9][2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class Activities</h6>
+                            <ul class="mb-3">
+                                <li>Conversion sprint; overflow detection in 4‑bit arithmetic. [9]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 2</h6>
+                            <ul class="mb-3">
+                                <li>Implement & test 2-input NAND, 2-input NOR (universal gates). [6][1]</li>
+                                <li>Optional: parity generator/checker combinational design. [11]</li>
+                            </ul>
+                            <p class="mb-1"><strong>Outcomes:</strong> Understand / Apply. [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 3 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week3" type="button">
+                            Week 3: Logic Gates, Boolean Algebra, DeMorgan; Simplification
+                        </button>
+                    </h4>
+                    <div id="week3" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>AND, OR, NOT, NAND, NOR, XOR, XNOR; truth tables; timing basics. [1][2]</li>
+                                <li>Boolean identities, DeMorgan’s theorems; algebraic simplification. [1][2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Simplify expressions; prove equivalences with DeMorgan. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 3</h6>
+                            <ul class="mb-3">
+                                <li>3-input XOR with exhaustive testbench. [8][6]</li>
+                                <li>Boolean module from truth table/spec—algebraic & structural forms. [1][2]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Apply / Analyze. [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 4 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week4" type="button">
+                            Week 4: Canonical Forms, SOP/POS; K-Maps; Don’t-Cares
+                        </button>
+                    </h4>
+                    <div id="week4" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Minterms / maxterms; canonical SOP/POS; hazards (overview); K‑map grouping (≤4 vars) w/ don’t‑cares. [12][2]</li>
+                                <li>Design flow: spec → table → K‑map → minimal expression → gates. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>3- and 4-variable K‑map practice with don’t‑cares. [12][2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 4</h6>
+                            <ul class="mb-3">
+                                <li>Half Adder, Full Adder; ripple structure demonstration. [7][6]</li>
+                                <li>Truth table verification vs simulation. [1]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Analyze / Create (small). [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 5 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week5" type="button">
+                            Week 5: MSI Blocks — Mux/Demux, Encoder/Decoder, Comparator
+                        </button>
+                    </h4>
+                    <div id="week5" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>MUX logic realization; 2:1 & 4:1 mux, demux, encoders/decoders, priority encoding; 2-/4-bit comparators. [1][2]</li>
+                                <li>Universal gate implementations; AND-OR / AND-OR-INVERT structures. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Map logic to 4:1 MUX; decoder-based realization. [12][2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 5</h6>
+                            <ul class="mb-3">
+                                <li>2:1 & 4:1 multiplexers (parameterized). [11][6][8]</li>
+                                <li>3:8 decoder with enable; optional constrained random. [7][11]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Apply / Create. [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 6 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week6" type="button">
+                            Week 6: 4-bit Adders & Intro to Verification Rigor
+                        </button>
+                    </h4>
+                    <div id="week6" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Ripple-carry 4-bit adder; propagation delay; lookahead concept (awareness). [7][2]</li>
+                                <li>Interface conventions, buses, bus notation. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Compose FAs → 4-bit adder; measure sim delay. [7]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 6</h6>
+                            <ul class="mb-3">
+                                <li>4-bit adder; extend to subtract (2’s complement conditioning). [6][7]</li>
+                                <li>Coverage checklist (carry, overflow). [8]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Analyze / Evaluate. [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 7 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week7" type="button">
+                            Week 7: Latches & Flip-Flops; Edge vs Level; Metastability
+                        </button>
+                    </h4>
+                    <div id="week7" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Latches (SR, D, gated) vs flip-flops; edge vs level; setup/hold; metastability concept. [10][2]</li>
+                                <li>D & JK behaviors; excitation tables. [10][1]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Timing diagrams; hazard discussion. [10][2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 7</h6>
+                            <ul class="mb-3">
+                                <li>Clocked D FF with reset (sync/async), pos/neg edge variants; reset demonstration. [6][8]</li>
+                                <li>Optional: JK→D transformation.</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Understand / Apply. [5][1]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 8 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week8" type="button">
+                            Week 8: Registers, Shift Registers; 555 Timer Basics
+                        </button>
+                    </h4>
+                    <div id="week8" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Registers (serial/parallel); 4-bit shift (SISO, SIPO, PISO concepts); simple serial notions. [10][2]</li>
+                                <li>555 timer astable / monostable concepts (timing context). [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Build 4-bit SIPO from D-FFs; timing step-through. [10]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 8</h6>
+                            <ul class="mb-3">
+                                <li>4-bit shift register (serial/parallel) with enable & reset; sequence tests. [8][6]</li>
+                                <li>Optional: simple clock generator process (555 mimic). [8]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Apply / Create. [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 9 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week9" type="button">
+                            Week 9: Counters — Async/Sync, Decade, Johnson
+                        </button>
+                    </h4>
+                    <div id="week9" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Asynchronous vs synchronous counters; modulo design; decade & Johnson sequences. [10][2]</li>
+                                <li>Counter decoding; glitching. [10][2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Design synchronous 3-bit up counter (derive equations). [10]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 9</h6>
+                            <ul class="mb-3">
+                                <li>Async & sync 2/3-bit counters with reset + terminal count. [6][8]</li>
+                                <li>Optional: Johnson counter sequence.</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Analyze / Create. [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 10 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week10" type="button">
+                            Week 10: Computer Organization — Architecture & Buses
+                        </button>
+                    </h4>
+                    <div id="week10" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>von Neumann: CPU, memory, I/O; buses, master/contention; timing. [2]</li>
+                                <li>Microprocessor: ALU, control/timing unit, registers; instruction cycle; I/O modes (polling, interrupts, DMA). [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Instruction cycle walkthrough; bus arbitration role-play. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 10</h6>
+                            <ul class="mb-3">
+                                <li>4-bit ALU planning: opcode map, I/O spec; test plan drafting. [7][8]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Understand / Analyze. [5][2]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 11 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week11" type="button">
+                            Week 11: Instruction Types; Microcontrollers & SoCs; ALU Build
+                        </button>
+                    </h4>
+                    <div id="week11" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>CPU instruction types; microprocessor vs microcontroller; SoC integration. [2]</li>
+                                <li>Implementation considerations: logic levels, power, delay. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Map ALU ops to instruction semantics; integration discussion. [2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 11</h6>
+                            <ul class="mb-3">
+                                <li>Implement 4-bit ALU (ADD, SUB, AND, OR) + flags (Z, Cout); exhaustive / targeted tests. [6][8][7]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Apply / Create / Evaluate. [5]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Week 12 -->
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#week12" type="button">
+                            Week 12: Integration, Review, Mini Design Challenge
+                        </button>
+                    </h4>
+                    <div id="week12" class="accordion-collapse collapse" data-bs-parent="#weeklySchedule">
+                        <div class="accordion-body">
+                            <h6 class="text-primary mb-2">Lecture</h6>
+                            <ul class="mb-3">
+                                <li>Capstone review: flow from number systems to architecture; verification strategies. [1][2]</li>
+                                <li>Exam preparation: K-maps, design flows, timing, counters/registers, architecture. [12][1]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">In-class</h6>
+                            <ul class="mb-3">
+                                <li>Strategy workshop: mux/decoder minimization; sync vs async counters; reset handling. [12][2]</li>
+                            </ul>
+                            <h6 class="text-primary mb-2">Lab 12</h6>
+                            <ul class="mb-3">
+                                <li>Final verification & demos (ALU + selected designs); optional add XOR or comparator. [6][7]</li>
+                                <li>Reflective brief using Bloom verbs. [3][4][5]</li>
+                            </ul>
+                            <p><strong>Outcomes:</strong> Evaluate / Create. [5]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical Mapping -->
+            <div class="mt-5">
+                <h3 class="mb-3"><i class="fas fa-link text-primary me-2"></i>Practical (Lab) Mapping to Syllabus</h3>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item">Basic gates: AND(2), OR(3), NAND, NOR, XOR(3). [8][6][1]</li>
+                    <li class="list-group-item">Boolean logic module from spec (truth table / K-map → Verilog). [12][8]</li>
+                    <li class="list-group-item">Adders: Half, Full, 4-bit ripple; subtraction via 2’s complement. [7][1]</li>
+                    <li class="list-group-item">Data routing: 2:1, 4:1 MUX; 3:8 Decoder; optional encoder. [11][7]</li>
+                    <li class="list-group-item">Sequential: D-FF w/reset; 4-bit shift registers; counters (async/sync). [6][10]</li>
+                    <li class="list-group-item">ALU: 4-bit (ADD, SUB, AND, OR) + flags. [8][7]</li>
+                </ul>
+            </div>
+
+            <!-- Assessments -->
+            <div class="mt-5">
+                <h3 class="mb-3"><i class="fas fa-clipboard-check text-primary me-2"></i>Assessments, Policies, and Resources</h3>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="p-3 h-100 border rounded bg-white">
+                            <h5 class="text-primary">Assessment Weighting (Suggested)</h5>
+                            <ul class="mb-0">
+                                <li>Weekly labs + reports + testbench evidence (40%). [1][2]</li>
+                                <li>Midterm written exam (20%). [12][1]</li>
+                                <li>Practical checkouts (10%). [10][1]</li>
+                                <li>Final exam (20%). [2]</li>
+                                <li>Capstone ALU demo + viva (10%). [8][7]</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 h-100 border rounded bg-white">
+                            <h5 class="text-primary">Pedagogy Alignment</h5>
+                            <p class="mb-2">Bloom taxonomy guides verbs & assessment depth. [4][3][5]</p>
+                            <p class="mb-0">References align with standard digital electronics curricular outlines. [1][2][10][11]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Lesson Template -->
+            <div class="mt-5">
+                <h3 class="mb-3"><i class="fas fa-hourglass-half text-primary me-2"></i>Daily Lesson Template (60–75 min)</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">10 min: Recap + quiz linking prior lab (Remember/Understand). [5]</li>
+                    <li class="list-group-item">25–30 min: Core exposition + worked examples (Apply). [1][2]</li>
+                    <li class="list-group-item">15–20 min: Guided practice (Analyze). [12][10]</li>
+                    <li class="list-group-item">10 min: Exit ticket / trade-off or verification prompt (Evaluate). [5]</li>
+                </ul>
+            </div>
+
+            <!-- Lab Workflow Standards -->
+            <div class="mt-5">
+                <h3 class="mb-3"><i class="fas fa-cogs text-primary me-2"></i>Lab Workflow Standards</h3>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item">Spec, interface diagram, truth table/behavioral description per module. [7][8]</li>
+                    <li class="list-group-item">Testbench: exhaustive or high-coverage stimuli; assertions; waveforms. [8]</li>
+                    <li class="list-group-item">Encourage parameterization & modular composition (FA→adder, D-FF→register/counter). [8][7]</li>
+                    <li class="list-group-item">Coverage checklist & corner cases (overflow, reset mid-operation). [8]</li>
+                </ul>
+            </div>
+
+            <!-- Contingency & Enrichment -->
+            <div class="mt-5">
+                <h3 class="mb-3"><i class="fas fa-lightbulb text-primary me-2"></i>Contingency & Enrichment</h3>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item">Introduce a simple FSM example (time-permitting). [12][10]</li>
+                    <li class="list-group-item">Optional FPGA demo (adder or counter) when hardware available. [7]</li>
+                </ul>
+            </div>
+
+            <!-- Reading / Preparation -->
+            <div class="mt-5">
+                <h3 class="mb-3"><i class="fas fa-book-reader text-primary me-2"></i>Session-by-Session Reading / Preparation</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Weeks 1–2: Number systems, digital vs analog, logic levels. [9][2]</li>
+                    <li class="list-group-item">Weeks 3–4: Boolean algebra, DeMorgan, SOP/POS, K-maps, don’t-cares. [12][2]</li>
+                    <li class="list-group-item">Weeks 5–6: MSI combinational (mux/decoder/adder), bus notation. [1][2]</li>
+                    <li class="list-group-item">Weeks 7–9: Latches, flip-flops, registers, counters, timing. [10][2]</li>
+                    <li class="list-group-item">Weeks 10–12: Architecture, instruction cycle, I/O, microcontrollers/SoCs, ALU integration. [2]</li>
+                </ul>
+                <p class="mt-3 mb-0 text-muted"><small>All entries reference recognized digital electronics course outlines & pedagogy models. [1][2][5]</small></p>
+            </div>
+        </div>
+    </section>
+<!-- ...existing code... -->
+
+
             <!-- Top Performers Section -->
             <div class="top-performers mt-5">
                 <h3 class="text-center mb-4">Top Performers</h3>
