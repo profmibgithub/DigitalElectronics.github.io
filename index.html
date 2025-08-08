@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACP124N: Applied Computing - Digital Electronics</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#overview">
+                <i class="fas fa-microchip me-2"></i>Digital Electronics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#syllabus">Syllabus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#materials">Materials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#assignments">Assignments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#attendance">Attendance</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="overview" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">
+                            <i class="fas fa-microchip text-primary me-3"></i>
+                            ACP124N: Applied Computing
+                        </h1>
+                        <h2 class="h3 text-primary mb-4">Digital Electronics</h2>
+                        <div class="course-info mb-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="info-card">
+                                        <i class="fas fa-book text-primary"></i>
+                                        <span>Theory Credits: <strong>4</strong></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-card">
+                                        <i class="fas fa-laptop-code text-primary"></i>
+                                        <span>Practical Credits: <strong>2</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="lead mb-4">Welcome to Digital Electronics for Semester 1, Batch 2025! This course is designed for UG Computer Applications students enrolled at Computer Science Department, GDC Beerwah.</p>
+                        <a href="#syllabus" class="btn btn-primary btn-lg me-3">Explore Syllabus</a>
+                        <a href="#materials" class="btn btn-outline-primary btn-lg">Course Materials</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="circuit-animation">
+                            <i class="fas fa-microchip fa-5x text-primary mb-3"></i>
+                            <i class="fas fa-cogs fa-3x text-secondary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Statistics Section -->
+    <section class="statistics-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold mb-3">Industry Relevance & Career Opportunities</h2>
+                <p class="lead">Digital Electronics is at the heart of modern technology innovation</p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>$815.16B</h3>
+                        <p>Global Electronics Market 2024</p>
+                        <small class="text-muted">Growing to $1,467.94B by 2032</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>7.85%</h3>
+                        <p>Market CAGR</p>
+                        <small class="text-muted">Compound Annual Growth Rate</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>9%</h3>
+                        <p>Employment Growth</p>
+                        <small class="text-muted">Electronics Engineering 2023-2033</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <h3>₹5.8-25.3L</h3>
+                        <p>VLSI Engineer Salary</p>
+                        <small class="text-muted">Average in India per annum</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="career-opportunities">
+                        <h3 class="text-center mb-4">Career Opportunities</h3>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="career-badge">
+                                    <i class="fas fa-memory"></i>
+                                    <span>VLSI Design</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="career-badge">
+                                    <i class="fas fa-microchip"></i>
+                                    <span>Embedded Systems</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="career-badge">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>IoT Development</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="career-badge">
+                                    <i class="fas fa-brain"></i>
+                                    <span>AI Chips</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section id="syllabus" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold mb-3">Course Syllabus</h2>
+                <p class="lead">Complete curriculum covering fundamental to advanced concepts</p>
+            </div>
+
+            <!-- Theory Units -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="mb-4"><i class="fas fa-book-open me-2"></i>Theory Units</h3>
+                    <div class="accordion" id="syllabusAccordion">
+                        <!-- Unit 1 -->
+                        <div class="accordion-item">
+                            <h4 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#unit1">
+                                    <i class="fas fa-binary me-3"></i>Unit 1: Digital Fundamentals
+                                </button>
+                            </h4>
+                            <div id="unit1" class="accordion-collapse collapse show" data-bs-parent="#syllabusAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Digital/Analog Quantities, Binary Digits, Logic Levels, Waveforms, Clock/Timing Diagrams</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Number Systems (Decimal, Binary, Octal, Hexadecimal) & Conversions</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Unsigned/Signed Arithmetic, Complements, BCD, Parity Code</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Logic Gates (AND, OR, NOT, NAND, NOR, XOR, XNOR)</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Boolean Algebra, DeMorgan's Theorems, Simplification</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Unit 2 -->
+                        <div class="accordion-item">
+                            <h4 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unit2">
+                                    <i class="fas fa-project-diagram me-3"></i>Unit 2: Combinational Logic
+                                </button>
+                            </h4>
+                            <div id="unit2" class="accordion-collapse collapse" data-bs-parent="#syllabusAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>SOP/POS forms, K-Maps (up to 4 variables), Don't care conditions</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Combinational Logic Circuits (AND-OR, AND-OR-INVERT, etc.), Universal Gates</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Half/Full Adder, 4-bit Adder, Comparator, Decoder, Encoder, Multiplexer, Demultiplexer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Unit 3 -->
+                        <div class="accordion-item">
+                            <h4 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unit3">
+                                    <i class="fas fa-memory me-3"></i>Unit 3: Sequential Logic
+                                </button>
+                            </h4>
+                            <div id="unit3" class="accordion-collapse collapse" data-bs-parent="#syllabusAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Latches (SR, D, Gated)</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Flip Flops (vs. Latch, Level/Edge-Triggered, D, JK)</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Flip Flop Applications (storage, counting), 555 Timer</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Shift Registers (Serial/Parallel 4-bit)</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Counters (Synchronous/Asynchronous 2/3 bit), Decade/Johnson Counter</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Unit 4 -->
+                        <div class="accordion-item">
+                            <h4 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unit4">
+                                    <i class="fas fa-server me-3"></i>Unit 4: Computer Architecture
+                                </button>
+                            </h4>
+                            <div id="unit4" class="accordion-collapse collapse" data-bs-parent="#syllabusAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>von Neumann Architecture, CPU, Memory, I/O, Buses, Bus Master/Contention, System Timing</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Microprocessor, ALU, Control/Timing Unit, Registers, Instruction Cycle</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Memory operations, I/O (Polling, Interrupts, DMA), CPU Instruction Types</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Microcontrollers, SoC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical List -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="mb-4"><i class="fas fa-laptop-code me-2"></i>Practical Experiments (Verilog/SystemVerilog)</h3>
+                    <div class="row g-3">
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">1</span>
+                                <div>
+                                    <h5>Basic Gates Implementation</h5>
+                                    <p>Implement 2-input AND, 3-input OR gates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">2</span>
+                                <div>
+                                    <h5>Universal Gates</h5>
+                                    <p>Implement and test 2-input NAND, 2-input NOR gates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">3</span>
+                                <div>
+                                    <h5>XOR Gate Design</h5>
+                                    <p>Design and simulate 3-input XOR gate</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">4</span>
+                                <div>
+                                    <h5>Boolean Logic Module</h5>
+                                    <p>Implement a given boolean logic module</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">5</span>
+                                <div>
+                                    <h5>Adder Circuits</h5>
+                                    <p>Design Half Adder, Full Adder, 4-bit Binary Adder</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">6</span>
+                                <div>
+                                    <h5>Multiplexers</h5>
+                                    <p>Design 2-to-1 and 4-to-1 Multiplexers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">7</span>
+                                <div>
+                                    <h5>Decoder Design</h5>
+                                    <p>Design and simulate a 3-to-8 Decoder</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="practical-card">
+                                <span class="practical-number">8</span>
+                                <div>
+                                    <h5>D Flip Flop</h5>
+                                    <p>Design clocked D Flip Flop with reset</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="practical-card">
+                                <span class="practical-number">9</span>
+                                <div>
+                                    <h5>4-bit ALU Design</h5>
+                                    <p>Design and simulate a simple 4-bit ALU (ADD, SUB, AND, OR)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Materials Section -->
+    <section id="materials" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold mb-3">Course Materials</h2>
+                <p class="lead">Organized study resources and reference materials for each topic</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Material 1 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-binary"></i>
+                        </div>
+                        <h4>Digital Fundamentals & Number Systems</h4>
+                        <p>Foundation concepts of digital electronics and various number systems</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">Digital vs Analog</span>
+                            <span class="topic-tag">Number System Conversions</span>
+                            <span class="topic-tag">Binary Arithmetic</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('fundamentals')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Material 2 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h4>Logic Gates & Boolean Algebra</h4>
+                        <p>Core logic gates and algebraic manipulation of Boolean expressions</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">Basic Gates</span>
+                            <span class="topic-tag">Universal Gates</span>
+                            <span class="topic-tag">Boolean Laws</span>
+                            <span class="topic-tag">DeMorgan's Theorems</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('boolean')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Material 3 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4>Combinational Logic Design</h4>
+                        <p>Design and analysis of combinational digital circuits</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">K-Maps</span>
+                            <span class="topic-tag">SOP/POS</span>
+                            <span class="topic-tag">Adders</span>
+                            <span class="topic-tag">Encoders/Decoders</span>
+                            <span class="topic-tag">Multiplexers</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('combinational')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Material 4 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <h4>Sequential Logic & Flip-Flops</h4>
+                        <p>Memory elements and sequential circuit building blocks</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">Latches</span>
+                            <span class="topic-tag">D/JK Flip-Flops</span>
+                            <span class="topic-tag">Edge/Level Triggering</span>
+                            <span class="topic-tag">555 Timer</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('sequential')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Material 5 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-list-ol"></i>
+                        </div>
+                        <h4>Registers & Counters</h4>
+                        <p>Data storage and counting circuits in digital systems</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">Shift Registers</span>
+                            <span class="topic-tag">Synchronous/Asynchronous Counters</span>
+                            <span class="topic-tag">Decade Counters</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('registers')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Material 6 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4>Computer Architecture Basics</h4>
+                        <p>Fundamental computer organization and microprocessor concepts</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">von Neumann Architecture</span>
+                            <span class="topic-tag">CPU Components</span>
+                            <span class="topic-tag">Memory Systems</span>
+                            <span class="topic-tag">I/O Operations</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('architecture')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Material 7 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Verilog Programming Fundamentals</h4>
+                        <p>Hardware description language for digital circuit modeling</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">HDL Basics</span>
+                            <span class="topic-tag">Module Design</span>
+                            <span class="topic-tag">Testbenches</span>
+                            <span class="topic-tag">Simulation</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('verilog')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Material 8 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="material-card h-100">
+                        <div class="material-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Digital Circuit Simulation</h4>
+                        <p>Tools and techniques for testing digital designs</p>
+                        <div class="topics-list">
+                            <span class="topic-tag">Logic Simulation</span>
+                            <span class="topic-tag">Timing Analysis</span>
+                            <span class="topic-tag">Verification Methods</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary w-100 mb-2">Access Notes</button>
+                            <button class="btn btn-outline-secondary w-100" onclick="showReferences('simulation')">Reference Links</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assignments Section -->
+    <section id="assignments" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold mb-3">Course Assignments</h2>
+                <p class="lead">Four comprehensive assignments to evaluate your understanding</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Assignment 1 -->
+                <div class="col-lg-6">
+                    <div class="assignment-card h-100">
+                        <div class="assignment-header">
+                            <div class="assignment-icon presentation">
+                                <i class="fas fa-presentation"></i>
+                            </div>
+                            <div>
+                                <h4>Assignment 1: Presentation</h4>
+                                <span class="assignment-type">Research & Present</span>
+                            </div>
+                        </div>
+                        <div class="assignment-body">
+                            <h5>Emerging Technologies in Digital Electronics</h5>
+                            <p>Students will research and present on topics like quantum computing, neuromorphic chips, or advanced VLSI technologies</p>
+                            <div class="assignment-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-clock text-primary"></i>
+                                    <span>Duration: 15-20 minutes</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-tasks text-primary"></i>
+                                    <span>Deliverables: PowerPoint/PDF, Research report, Live presentation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="assignment-footer">
+                            <button class="btn btn-outline-primary">View Details</button>
+                            <span class="due-date">Due: TBA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assignment 2 -->
+                <div class="col-lg-6">
+                    <div class="assignment-card h-100">
+                        <div class="assignment-header">
+                            <div class="assignment-icon quiz">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Assignment 2: Quiz</h4>
+                                <span class="assignment-type">Online Assessment</span>
+                            </div>
+                        </div>
+                        <div class="assignment-body">
+                            <h5>Digital Logic Fundamentals Quiz</h5>
+                            <p>Online quiz covering Units 1-2 concepts including number systems, logic gates, and combinational circuits</p>
+                            <div class="assignment-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-clock text-primary"></i>
+                                    <span>Duration: 60 minutes</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-list text-primary"></i>
+                                    <span>Format: Multiple choice and short answer questions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="assignment-footer">
+                            <button class="btn btn-outline-primary">View Details</button>
+                            <span class="due-date">Due: TBA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assignment 3 -->
+                <div class="col-lg-6">
+                    <div class="assignment-card h-100">
+                        <div class="assignment-header">
+                            <div class="assignment-icon debate">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4>Assignment 3: Debate</h4>
+                                <span class="assignment-type">Team Discussion</span>
+                            </div>
+                        </div>
+                        <div class="assignment-body">
+                            <h5>Future of Digital Electronics: Hardware vs Software Solutions</h5>
+                            <p>Teams debate the role of dedicated hardware vs software solutions in emerging technologies</p>
+                            <div class="assignment-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-users text-primary"></i>
+                                    <span>Format: Team-based debate</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-clock text-primary"></i>
+                                    <span>Duration: 30 minutes per team</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="assignment-footer">
+                            <button class="btn btn-outline-primary">View Details</button>
+                            <span class="due-date">Due: TBA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assignment 4 -->
+                <div class="col-lg-6">
+                    <div class="assignment-card h-100">
+                        <div class="assignment-header">
+                            <div class="assignment-icon practical">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h4>Assignment 4: Practical</h4>
+                                <span class="assignment-type">Design Project</span>
+                            </div>
+                        </div>
+                        <div class="assignment-body">
+                            <h5>Verilog Design Project</h5>
+                            <p>Design and implement a complete digital system using Verilog (e.g., simple calculator, traffic light controller)</p>
+                            <div class="assignment-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-code text-primary"></i>
+                                    <span>Language: Verilog/SystemVerilog</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-tasks text-primary"></i>
+                                    <span>Deliverables: Code, Simulation results, Documentation, Demo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="assignment-footer">
+                            <button class="btn btn-outline-primary">View Details</button>
+                            <span class="due-date">Due: TBA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold mb-3">Monthly Attendance</h2>
+                <p class="lead">Track your attendance and see top performers</p>
+            </div>
+
+            <!-- Attendance Tabs -->
+            <ul class="nav nav-pills justify-content-center mb-4" id="attendanceTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="august-tab" data-bs-toggle="pill" data-bs-target="#august" type="button">August 2025</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="september-tab" data-bs-toggle="pill" data-bs-target="#september" type="button">September 2025</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="october-tab" data-bs-toggle="pill" data-bs-target="#october" type="button">October 2025</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="november-tab" data-bs-toggle="pill" data-bs-target="#november" type="button">November 2025</button>
+                </li>
+            </ul>
+
+            <!-- Attendance Content -->
+            <div class="tab-content" id="attendanceTabContent">
+                <div class="tab-pane fade show active" id="august" role="tabpanel">
+                    <div class="attendance-upload mb-4">
+                        <div class="upload-area text-center p-4">
+                            <i class="fas fa-upload fa-3x text-muted mb-3"></i>
+                            <h5>Upload August 2025 Attendance Report</h5>
+                            <p class="text-muted">Drag and drop your Excel file or click to browse</p>
+                            <button class="btn btn-primary">Choose File</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sample-table">
+                        <h5 class="mb-3">Sample Attendance Structure</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Roll No</th>
+                                        <th>Student Name</th>
+                                        <th>Classes Attended</th>
+                                        <th>Total Classes</th>
+                                        <th>Percentage</th>
+                                        <th>Status</th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="attendance-excellent">
+                                        <td>BCA001</td>
+                                        <td>Sample Student 1</td>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>95%</td>
+                                        <td><span class="status status--success">Excellent</span></td>
+                                        <td>Outstanding attendance</td>
+                                    </tr>
+                                    <tr class="attendance-good">
+                                        <td>BCA002</td>
+                                        <td>Sample Student 2</td>
+                                        <td>16</td>
+                                        <td>20</td>
+                                        <td>80%</td>
+                                        <td><span class="status status--warning">Good</span></td>
+                                        <td>Good performance</td>
+                                    </tr>
+                                    <tr class="attendance-poor">
+                                        <td>BCA003</td>
+                                        <td>Sample Student 3</td>
+                                        <td>12</td>
+                                        <td>20</td>
+                                        <td>60%</td>
+                                        <td><span class="status status--error">Poor</span></td>
+                                        <td>Needs improvement</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="september" role="tabpanel">
+                    <div class="attendance-upload mb-4">
+                        <div class="upload-area text-center p-4">
+                            <i class="fas fa-upload fa-3x text-muted mb-3"></i>
+                            <h5>Upload September 2025 Attendance Report</h5>
+                            <p class="text-muted">Drag and drop your Excel file or click to browse</p>
+                            <button class="btn btn-primary">Choose File</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="october" role="tabpanel">
+                    <div class="attendance-upload mb-4">
+                        <div class="upload-area text-center p-4">
+                            <i class="fas fa-upload fa-3x text-muted mb-3"></i>
+                            <h5>Upload October 2025 Attendance Report</h5>
+                            <p class="text-muted">Drag and drop your Excel file or click to browse</p>
+                            <button class="btn btn-primary">Choose File</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="november" role="tabpanel">
+                    <div class="attendance-upload mb-4">
+                        <div class="upload-area text-center p-4">
+                            <i class="fas fa-upload fa-3x text-muted mb-3"></i>
+                            <h5>Upload November 2025 Attendance Report</h5>
+                            <p class="text-muted">Drag and drop your Excel file or click to browse</p>
+                            <button class="btn btn-primary">Choose File</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Performers Section -->
+            <div class="top-performers mt-5">
+                <h3 class="text-center mb-4">Top Performers</h3>
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="performer-card">
+                            <div class="performer-badge">
+                                <i class="fas fa-medal text-warning"></i>
+                            </div>
+                            <div class="performer-avatar">
+                                <i class="fas fa-user fa-3x"></i>
+                            </div>
+                            <h5>Sample Student 1</h5>
+                            <p class="text-muted">Roll No: BCA001</p>
+                            <div class="performer-stats">
+                                <span class="attendance-percent">95%</span>
+                                <span class="badge bg-success">Excellent Attendance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="performer-card">
+                            <div class="performer-badge">
+                                <i class="fas fa-trophy text-primary"></i>
+                            </div>
+                            <div class="performer-avatar">
+                                <i class="fas fa-user fa-3x"></i>
+                            </div>
+                            <h5>Sample Student 2</h5>
+                            <p class="text-muted">Roll No: BCA002</p>
+                            <div class="performer-stats">
+                                <span class="attendance-percent">92%</span>
+                                <span class="badge bg-primary">Outstanding Performance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>ACP124N: Applied Computing - Digital Electronics</h5>
+                    <p>Semester 1, Batch 2025 | Computer Applications</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p>Welcome to your Digital Electronics journey!</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reference Modal -->
+    <div class="modal fade" id="referenceModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reference Materials</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="referenceContent">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
