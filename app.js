@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initAttendanceUpload();
     initAssignments();
     initAnimations();
+    initProfessorCard();
+    initFooter();
+    initAccessibility();
 });
 
 // Navigation functionality
@@ -21,11 +24,11 @@ function initNavigation() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const navbarHeight = document.querySelector('.navbar').offsetHeight || 70;
                 const offsetTop = targetElement.offsetTop - navbarHeight - 20;
                 
                 window.scrollTo({
-                    top: offsetTop,
+                    top: Math.max(0, offsetTop),
                     behavior: 'smooth'
                 });
                 
@@ -33,32 +36,49 @@ function initNavigation() {
                 updateActiveNavLink(this);
                 
                 // Close mobile navbar if open
-                const navbarToggler = document.querySelector('.navbar-toggler');
                 const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click();
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    if (navbarToggler) {
+                        navbarToggler.click();
+                    }
                 }
             }
         });
     });
     
-    // Update active navigation on scroll
-    window.addEventListener('scroll', function() {
+    // Update active navigation on scroll with throttling
+    let ticking = false;
+    function updateNavigationOnScroll() {
         const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 150;
+        const scrollPos = window.scrollY + 200;
         
+        let activeSection = null;
         sections.forEach(section => {
             const top = section.offsetTop;
             const height = section.offsetHeight;
             const id = section.getAttribute('id');
             
             if (scrollPos >= top && scrollPos < top + height) {
-                const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                if (activeLink) {
-                    updateActiveNavLink(activeLink);
-                }
+                activeSection = id;
             }
         });
+        
+        if (activeSection) {
+            const activeLink = document.querySelector(`.nav-link[href="#${activeSection}"]`);
+            if (activeLink) {
+                updateActiveNavLink(activeLink);
+            }
+        }
+        
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavigationOnScroll);
+            ticking = true;
+        }
     });
 }
 
@@ -69,7 +89,9 @@ function updateActiveNavLink(activeLink) {
     });
     
     // Add active class to current link
-    activeLink.classList.add('active');
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
 }
 
 // Reference materials functionality
@@ -278,18 +300,20 @@ function initReferenceMaterials() {
         }
     };
 
-    // Add event listeners to reference buttons
-    const referenceButtons = document.querySelectorAll('[onclick*="showReferences"]');
+    // Add event listeners to reference buttons - handle both onclick and direct event listeners
+    const referenceButtons = document.querySelectorAll('button[onclick*="showReferences"], .btn[onclick*="showReferences"]');
     referenceButtons.forEach(button => {
         const onclickAttr = button.getAttribute('onclick');
-        const topicMatch = onclickAttr.match(/showReferences\('([^']+)'\)/);
-        if (topicMatch) {
-            const topic = topicMatch[1];
-            button.removeAttribute('onclick');
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                showReferences(topic);
-            });
+        if (onclickAttr) {
+            const topicMatch = onclickAttr.match(/showReferences\('([^']+)'\)/);
+            if (topicMatch) {
+                const topic = topicMatch[1];
+                button.removeAttribute('onclick');
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showReferences(topic);
+                });
+            }
         }
     });
     
@@ -302,10 +326,15 @@ function initReferenceMaterials() {
         }
 
         const modalElement = document.getElementById('referenceModal');
+        if (!modalElement) {
+            console.error('Reference modal not found');
+            return;
+        }
+        
         const modalTitle = modalElement.querySelector('.modal-title');
         const modalBody = modalElement.querySelector('#referenceContent');
         
-        modalTitle.textContent = data.title + ' - Reference Materials';
+        if (modalTitle) modalTitle.textContent = data.title + ' - Reference Materials';
         
         let content = '<div class="reference-links">';
         data.links.forEach(link => {
@@ -320,10 +349,16 @@ function initReferenceMaterials() {
         });
         content += '</div>';
         
-        modalBody.innerHTML = content;
+        if (modalBody) modalBody.innerHTML = content;
         
-        const modal = new bootstrap.Modal(modalElement);
-        modal.show();
+        // Use Bootstrap modal
+        try {
+            const modal = new bootstrap.Modal(modalElement);
+            modal.show();
+        } catch (error) {
+            console.error('Error showing modal:', error);
+            showAlert('Reference materials modal could not be opened. Please try again.', 'warning');
+        }
     }
 
     // Make showReferences function globally available
@@ -386,7 +421,6 @@ function initAttendanceUpload() {
 
 function handleFileUpload(file, area) {
     // Show loading state
-    const originalContent = area.innerHTML;
     area.innerHTML = `
         <div class="text-center p-4">
             <div class="spinner-border text-primary mb-3" role="status">
@@ -434,16 +468,18 @@ function resetUploadArea(button) {
     area.appendChild(fileInput);
     
     const newButton = area.querySelector('.btn');
-    newButton.addEventListener('click', function() {
-        fileInput.click();
-    });
-    
-    fileInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            handleFileUpload(file, area);
-        }
-    });
+    if (newButton) {
+        newButton.addEventListener('click', function() {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                handleFileUpload(file, area);
+            }
+        });
+    }
 }
 
 // Assignment functionality
@@ -454,8 +490,8 @@ function initAssignments() {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             const card = this.closest('.assignment-card');
-            const title = card.querySelector('h5').textContent;
-            const type = card.querySelector('.assignment-type').textContent;
+            const title = card.querySelector('h5') ? card.querySelector('h5').textContent : 'Assignment';
+            const type = card.querySelector('.assignment-type') ? card.querySelector('.assignment-type').textContent : 'Assignment';
             
             showAssignmentDetails(title, type);
         });
@@ -616,13 +652,87 @@ function initAnimations() {
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.stat-card, .material-card, .assignment-card, .practical-card');
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(element);
+    // Observe elements for animation with delay
+    setTimeout(() => {
+        const animatedElements = document.querySelectorAll('.stat-card, .material-card, .assignment-card, .practical-card, .professor-card');
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+    }, 100);
+}
+
+// Professor card interaction
+function initProfessorCard() {
+    const professorCard = document.querySelector('.professor-card');
+    if (professorCard) {
+        professorCard.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+            this.style.boxShadow = '0 25px 50px rgba(33, 128, 141, 0.2)';
+        });
+        
+        professorCard.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        // Add click effect for professor email
+        const emailLink = professorCard.querySelector('a[href^="mailto:"]');
+        if (emailLink) {
+            emailLink.addEventListener('click', function(e) {
+                showAlert('Opening email client to contact Prof. Mohd. Iqbal Bhat...', 'info');
+            });
+        }
+    }
+}
+
+// Footer interactions
+function initFooter() {
+    const footerLinks = document.querySelectorAll('.footer-quick-links a[href^="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight || 70;
+                const offsetTop = targetElement.offsetTop - navbarHeight - 20;
+                
+                window.scrollTo({
+                    top: Math.max(0, offsetTop),
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+// Enhanced accessibility features
+function initAccessibility() {
+    // Add keyboard navigation support for cards
+    const interactiveCards = document.querySelectorAll('.material-card, .assignment-card, .professor-card');
+    interactiveCards.forEach(card => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const button = this.querySelector('.btn');
+                if (button) {
+                    button.click();
+                }
+            }
+        });
+    });
+    
+    // Add ARIA labels for better screen reader support
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        const text = link.textContent.trim();
+        link.setAttribute('aria-label', `Navigate to ${text} section`);
     });
 }
 
@@ -670,55 +780,19 @@ function showAlert(message, type = 'info') {
     
     // Auto-dismiss after 5 seconds
     setTimeout(() => {
-        const alert = document.querySelector('.alert:last-of-type');
-        if (alert) {
-            const bsAlert = new bootstrap.Alert(alert);
-            bsAlert.close();
+        const alerts = document.querySelectorAll('.alert.position-fixed');
+        if (alerts.length > 0) {
+            const latestAlert = alerts[alerts.length - 1];
+            try {
+                const bsAlert = new bootstrap.Alert(latestAlert);
+                bsAlert.close();
+            } catch (error) {
+                // Fallback: remove the alert manually
+                latestAlert.remove();
+            }
         }
     }, 5000);
 }
-
-// Add CSS for drag and drop states
-const style = document.createElement('style');
-style.textContent = `
-    .drag-over {
-        border-color: var(--color-primary) !important;
-        background-color: var(--color-bg-1) !important;
-    }
-    
-    .reference-item:hover {
-        background-color: var(--color-bg-1) !important;
-        transform: translateX(5px);
-        transition: all 0.2s ease;
-    }
-    
-    .assignment-details-content h6 {
-        border-bottom: 2px solid var(--color-primary);
-        padding-bottom: 5px;
-        display: inline-block;
-    }
-`;
-document.head.appendChild(style);
-
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply debouncing to scroll events if needed for performance
-const debouncedScrollHandler = debounce(() => {
-    // Scroll-based animations or updates can go here
-}, 100);
-
-window.addEventListener('scroll', debouncedScrollHandler);
 
 // Make resetUploadArea globally available
 window.resetUploadArea = resetUploadArea;

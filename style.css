@@ -809,6 +809,101 @@ select.form-control {
     50% { transform: translateY(-20px); }
 }
 
+/* Professor Card Styles */
+.professor-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-32);
+    box-shadow: var(--shadow-lg);
+    margin: var(--space-32) 0;
+    transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.professor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(var(--color-primary-rgb, 33, 128, 141), 0.15);
+}
+
+.professor-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-24);
+    margin-bottom: var(--space-24);
+    padding-bottom: var(--space-24);
+    border-bottom: 2px solid var(--color-card-border);
+}
+
+.professor-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-teal-400));
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.professor-info h3 {
+    margin-bottom: var(--space-8);
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+}
+
+.professor-info h5 {
+    margin-bottom: var(--space-8);
+    font-weight: var(--font-weight-medium);
+}
+
+.professor-designation {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+    margin-bottom: 0;
+}
+
+.professor-body {
+    padding-top: var(--space-16);
+}
+
+.professor-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-16);
+    margin-bottom: var(--space-20);
+}
+
+.professor-detail:last-child {
+    margin-bottom: 0;
+}
+
+.professor-detail i {
+    font-size: 1.3rem;
+    margin-top: var(--space-2);
+    flex-shrink: 0;
+}
+
+.professor-detail div {
+    color: var(--color-text-secondary);
+}
+
+.professor-detail strong {
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
+}
+
+.professor-detail a {
+    color: var(--color-primary);
+    transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.professor-detail a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline !important;
+}
+
 /* Statistics Section */
 .statistics-section {
     background: var(--color-surface);
@@ -1210,9 +1305,112 @@ select.form-control {
     color: var(--color-success);
 }
 
-/* Footer */
-footer {
-    background: var(--color-charcoal-800) !important;
+/* Footer Styles */
+.footer-section {
+    background: linear-gradient(135deg, var(--color-charcoal-800), var(--color-slate-900));
+    color: var(--color-gray-200);
+    padding: var(--space-32) 0;
+    margin-top: var(--space-32);
+}
+
+.footer-brand h4 {
+    color: var(--color-teal-300);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-8);
+}
+
+.footer-brand h5 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-8);
+    font-weight: var(--font-weight-medium);
+}
+
+.footer-brand p {
+    color: var(--color-gray-300);
+    margin-bottom: var(--space-8);
+    line-height: var(--line-height-normal);
+}
+
+.footer-contact h5,
+.footer-quick-links h5 {
+    color: var(--color-teal-300);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-16);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: var(--space-8);
+    display: inline-block;
+}
+
+.instructor-info h6 {
+    color: var(--color-gray-200);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-8);
+}
+
+.instructor-info p {
+    color: var(--color-gray-300);
+    margin-bottom: var(--space-8);
+    font-size: var(--font-size-sm);
+}
+
+.instructor-info i {
+    color: var(--color-primary);
+    width: 16px;
+    text-align: center;
+}
+
+.instructor-info a {
+    color: var(--color-teal-300);
+    transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.instructor-info a:hover {
+    color: var(--color-teal-400);
+}
+
+.footer-quick-links ul li {
+    margin-bottom: var(--space-8);
+}
+
+.footer-quick-links ul li a {
+    color: var(--color-gray-300);
+    font-size: var(--font-size-sm);
+    transition: all var(--duration-fast) var(--ease-standard);
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-quick-links ul li a:hover {
+    color: var(--color-teal-300);
+    transform: translateX(5px);
+}
+
+.footer-quick-links ul li a i {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+}
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gray-400), transparent);
+    margin: var(--space-24) 0;
+}
+
+.copyright-info {
+    color: var(--color-gray-300);
+    font-size: var(--font-size-sm);
+}
+
+.copyright-info p strong {
+    color: var(--color-teal-300);
+    font-weight: var(--font-weight-semibold);
+}
+
+.footer-stats {
+    color: var(--color-gray-400);
+    font-size: var(--font-size-sm);
+    text-align: right;
 }
 
 /* Modal Styles */
@@ -1242,6 +1440,22 @@ footer {
         margin-top: var(--space-32);
     }
     
+    .professor-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-16);
+    }
+    
+    .professor-avatar {
+        align-self: center;
+    }
+    
+    .professor-detail {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-8);
+    }
+    
     .stat-card {
         margin-bottom: var(--space-16);
     }
@@ -1269,6 +1483,11 @@ footer {
         margin: var(--space-4);
         font-size: var(--font-size-sm);
     }
+    
+    .footer-stats {
+        text-align: center;
+        margin-top: var(--space-16);
+    }
 }
 
 @media (max-width: 576px) {
@@ -1283,6 +1502,17 @@ footer {
     .info-card {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .professor-card {
+        padding: var(--space-20);
+        margin: var(--space-20) 0;
+    }
+    
+    .professor-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
     
     .assignment-header {
@@ -1355,4 +1585,22 @@ html {
 
 [data-color-scheme="dark"] .btn-close {
     filter: invert(0);
+}
+
+/* Additional styles for drag and drop states */
+.drag-over {
+    border-color: var(--color-primary) !important;
+    background-color: var(--color-bg-1) !important;
+}
+
+.reference-item:hover {
+    background-color: var(--color-bg-1) !important;
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+}
+
+.assignment-details-content h6 {
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 5px;
+    display: inline-block;
 }
